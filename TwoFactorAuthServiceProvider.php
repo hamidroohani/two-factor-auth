@@ -6,6 +6,9 @@ namespace TwoFactorAuth;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use TwoFactorAuth\Facades\TokenGeneratorFacade;
+use TwoFactorAuth\Facades\TokenStoreFacade;
+use TwoFactorAuth\Facades\UserProviderFacade;
 
 class TwoFactorAuthServiceProvider extends ServiceProvider
 {
@@ -13,7 +16,9 @@ class TwoFactorAuthServiceProvider extends ServiceProvider
 
     public function register()
     {
-
+        UserProviderFacade::shouldProxyTo(UserProvider::class);
+        TokenStoreFacade::shouldProxyTo(TokenStore::class);
+        TokenGeneratorFacade::shouldProxyTo(TokenGenerator::class);
     }
 
     public function boot()
