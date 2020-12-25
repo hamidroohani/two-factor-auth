@@ -6,8 +6,8 @@ namespace TwoFactorAuth;
 
 class TokenStore
 {
-    public function tokenStore($token, $user)
+    public function tokenStore($token, $userId)
     {
-        cache()->add($token . '_twoFactoAuth', $user->id);
+        cache()->add($token . '_twoFactoAuth', $userId);
     }
 }

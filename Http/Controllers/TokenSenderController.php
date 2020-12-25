@@ -20,7 +20,7 @@ class TokenSenderController extends Controller
         //generate token
         $token = TokenGeneratorFacade::generateToken();
         //save token
-        TokenStoreFacade::tokenStore($token,$user);
+        TokenStoreFacade::tokenStore($token,$user->id);
 
     }
 }
