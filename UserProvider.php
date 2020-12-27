@@ -13,8 +13,9 @@ class UserProvider
         return User::where('email',$email)->first();
     }
 
-    public function isBanned($user)
+    public function isBanned($userId)
     {
-        return $user->is_ban == 1;
+        $user = User::find($userId);
+        return ($user->is_ban == 1) ? true : false;
     }
 }
