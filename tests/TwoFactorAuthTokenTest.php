@@ -13,7 +13,7 @@ use TwoFactorAuth\Facades\UserProviderFacade;
 
 class TwoFactorAuthTokenTest extends TestCase
 {
-   /** @test */
+    /** @test */
     public function test_sample()
     {
         User::unguard();
@@ -31,19 +31,21 @@ class TwoFactorAuthTokenTest extends TestCase
         TokenStoreFacade::shouldReceive('tokenStore')
             // ->once()
             ->with('1q2w3e', $user->id);
-//        $response = $this->get('/api/two-factor-auth/request-token');
-//        $this->assertTrue($response->content() == 'hello');
+        TokenStoreFacade::shouldReceive('tokenSent')
+//            ->once()
+        ;
+//        $response = $this->get('/api/two-factor-auth/request-token?email=hamid@gmail.com');
     }
 
-/** @test */
+    /** @test */
     public function test_user_is_blocked()
     {
         User::unguard();
 
         UserProviderFacade::shouldReceive('isBanned')
-        // ->once()
-        ->with(1)
-        ->andReturn(true);
+            // ->once()
+            ->with(1)
+            ->andReturn(true);
 
         UserProviderFacade::shouldReceive('getUserByEmail')
             // ->once()
@@ -55,8 +57,8 @@ class TwoFactorAuthTokenTest extends TestCase
 
         TokenStoreFacade::shouldReceive('tokenStore')
             ->never();
-       $response = $this->get('/api/two-factor-auth/request-token?email=hamid@gmail.com');
-       $response->assertJson(['error' => 'You are blocked']);
-       $response->assertStatus(Response::HTTP_BAD_REQUEST);
+        $response = $this->get('/api/two-factor-auth/request-token?email=hamid@gmail.com');
+        $response->assertJson(['error' => 'You are blocked']);
+        $response->assertStatus(Response::HTTP_BAD_REQUEST);
     }
 }
