@@ -8,6 +8,7 @@ use Illuminate\Routing\Controller;
 use TwoFactorAuth\Facades\TokenGeneratorFacade;
 use TwoFactorAuth\Facades\TokenStoreFacade;
 use TwoFactorAuth\Facades\UserProviderFacade;
+use TwoFactorAuth\Http\ResponderFacade;
 
 class TokenSenderController extends Controller
 {
@@ -20,7 +21,7 @@ class TokenSenderController extends Controller
         // check user block
         if (UserProviderFacade::isBanned($user->id))
         {
-            return response()->json(['error' => 'You are blocked'],400);
+            return ResponderFacade::blockedUser();
         }
         //generate token
         $token = TokenGeneratorFacade::generateToken();

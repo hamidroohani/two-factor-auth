@@ -9,6 +9,8 @@ use Illuminate\Support\ServiceProvider;
 use TwoFactorAuth\Facades\TokenGeneratorFacade;
 use TwoFactorAuth\Facades\TokenStoreFacade;
 use TwoFactorAuth\Facades\UserProviderFacade;
+use TwoFactorAuth\Http\ResponderFacade;
+use TwoFactorAuth\Http\Responses\VueResponses;
 
 class TwoFactorAuthServiceProvider extends ServiceProvider
 {
@@ -19,6 +21,7 @@ class TwoFactorAuthServiceProvider extends ServiceProvider
         UserProviderFacade::shouldProxyTo(UserProvider::class);
         TokenStoreFacade::shouldProxyTo(TokenStore::class);
         TokenGeneratorFacade::shouldProxyTo(TokenGenerator::class);
+        ResponderFacade::shouldProxyTo(VueResponses::class);
     }
 
     public function boot()

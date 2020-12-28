@@ -5,6 +5,7 @@ namespace TwoFactorAuth\tests;
 
 
 use App\Models\User;
+use Illuminate\Http\Response;
 use Tests\TestCase;
 use TwoFactorAuth\Facades\TokenGeneratorFacade;
 use TwoFactorAuth\Facades\TokenStoreFacade;
@@ -12,7 +13,7 @@ use TwoFactorAuth\Facades\UserProviderFacade;
 
 class TwoFactorAuthTokenTest extends TestCase
 {
-   /** @test */ 
+   /** @test */
     public function test_sample()
     {
         User::unguard();
@@ -56,6 +57,6 @@ class TwoFactorAuthTokenTest extends TestCase
             ->never();
        $response = $this->get('/api/two-factor-auth/request-token?email=hamid@gmail.com');
        $response->assertJson(['error' => 'You are blocked']);
-       $response->assertStatus(400);
+       $response->assertStatus(Response::HTTP_BAD_REQUEST);
     }
 }
