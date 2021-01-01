@@ -18,6 +18,9 @@ class TokenSenderController extends Controller
 
         // find user row in DB or fail
         $user = UserProviderFacade::getUserByEmail($email);
+        if (!$user) {
+            return ResponderFacade::userNotFound();
+        }
         // check user block
         if (UserProviderFacade::isBanned($user->id))
         {

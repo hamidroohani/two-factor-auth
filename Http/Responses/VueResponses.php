@@ -16,4 +16,8 @@ class VueResponses
     {
         return response()->json(['message' => 'Token was sent.'],Response::HTTP_OK);
     }
+    public function userNotFound()
+    {
+        return response()->json(['error' => 'User not found.'],Response::HTTP_BAD_REQUEST);
+    }
 }
