@@ -28,6 +28,9 @@ class TokenSenderController extends Controller
         //save token
         TokenStoreFacade::tokenStore($token,$user->id);
 
+        // send token
+        TokenSenderFacade::send($token,$user);
+
         return ResponderFacade::tokenSent();
     }
 }
