@@ -6,6 +6,8 @@ namespace TwoFactorAuth;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use TwoFactorAuth\Authenticator\SessionAuth;
+use TwoFactorAuth\Facades\AuthFacade;
 use TwoFactorAuth\Facades\TokenGeneratorFacade;
 use TwoFactorAuth\Facades\TokenStoreFacade;
 use TwoFactorAuth\Facades\UserProviderFacade;
@@ -22,6 +24,7 @@ class TwoFactorAuthServiceProvider extends ServiceProvider
         TokenStoreFacade::shouldProxyTo(TokenStore::class);
         TokenGeneratorFacade::shouldProxyTo(TokenGenerator::class);
         ResponderFacade::shouldProxyTo(AndroidResponses::class);
+        AuthFacade::shouldProxyTo(SessionAuth::class);
     }
 
     public function boot()

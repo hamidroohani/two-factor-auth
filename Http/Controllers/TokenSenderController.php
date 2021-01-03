@@ -5,6 +5,7 @@ namespace TwoFactorAuth\Http\Controllers;
 
 
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use TwoFactorAuth\Facades\TokenGeneratorFacade;
 use TwoFactorAuth\Facades\TokenStoreFacade;
@@ -19,6 +20,9 @@ class TokenSenderController extends Controller
 
         //validate
         $this->validateEmail();
+
+        // return if user is login
+        $this->checkUserIsGuest();
 
         // find user row in DB or fail
         $user = UserProviderFacade::getUserByEmail($email);
@@ -48,6 +52,13 @@ class TokenSenderController extends Controller
         ]);
         if ($validate->fails()) {
             ResponderFacade::emailNotValid($validate->errors())->throwResponse();
+        }
+    }
+
+    private function checkUserIsGuest(): void
+    {
+        if (Auth::check()) {
+            ResponderFacade::youShouldBeGuest()->throwResponse();
         }
     }
 }

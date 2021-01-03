@@ -25,4 +25,9 @@ class VueResponses
     {
         return response()->json($error,Response::HTTP_BAD_REQUEST);
     }
+
+    public function youShouldBeGuest()
+    {
+        return response()->json(['error' => 'You are login.'],Response::HTTP_BAD_REQUEST);
+    }
 }
