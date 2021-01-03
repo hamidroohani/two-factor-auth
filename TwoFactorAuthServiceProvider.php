@@ -10,7 +10,7 @@ use TwoFactorAuth\Facades\TokenGeneratorFacade;
 use TwoFactorAuth\Facades\TokenStoreFacade;
 use TwoFactorAuth\Facades\UserProviderFacade;
 use TwoFactorAuth\Http\ResponderFacade;
-use TwoFactorAuth\Http\Responses\VueResponses;
+use TwoFactorAuth\Http\Responses\AndroidResponses;
 
 class TwoFactorAuthServiceProvider extends ServiceProvider
 {
@@ -21,7 +21,7 @@ class TwoFactorAuthServiceProvider extends ServiceProvider
         UserProviderFacade::shouldProxyTo(UserProvider::class);
         TokenStoreFacade::shouldProxyTo(TokenStore::class);
         TokenGeneratorFacade::shouldProxyTo(TokenGenerator::class);
-        ResponderFacade::shouldProxyTo(VueResponses::class);
+        ResponderFacade::shouldProxyTo(AndroidResponses::class);
     }
 
     public function boot()

@@ -5,6 +5,7 @@ namespace TwoFactorAuth\Http\Controllers;
 
 
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Facades\Validator;
 use TwoFactorAuth\Facades\TokenGeneratorFacade;
 use TwoFactorAuth\Facades\TokenStoreFacade;
 use TwoFactorAuth\Facades\UserProviderFacade;
@@ -15,6 +16,15 @@ class TokenSenderController extends Controller
     public function issueToken()
     {
         $email = request('email');
+
+        //validate
+        $validate = Validator::make(request()->all(),[
+            'email' => 'required|email'
+        ]);
+        if ($validate->fails())
+        {
+            return ResponderFacade::emailNotValid($validate->errors());
+        }
 
         // find user row in DB or fail
         $user = UserProviderFacade::getUserByEmail($email);

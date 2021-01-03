@@ -6,16 +6,18 @@ namespace TwoFactorAuth\Http\Responses;
 
 use Illuminate\Http\Response;
 
-class VueResponses
+class AndroidResponses
 {
     public function blockedUser()
     {
-        return response()->json(['error' => 'You are blocked'],Response::HTTP_BAD_REQUEST);
+        return response()->json(['err' => 'You are blocked from android'],Response::HTTP_BAD_REQUEST);
     }
+    
     public function tokenSent()
     {
-        return response()->json(['message' => 'Token was sent.'],Response::HTTP_OK);
+        return response()->json(['msg' => 'Token was sent from android.'],Response::HTTP_OK);
     }
+
     public function userNotFound()
     {
         return response()->json(['error' => 'User not found.'],Response::HTTP_BAD_REQUEST);
