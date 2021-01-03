@@ -18,13 +18,7 @@ class TokenSenderController extends Controller
         $email = request('email');
 
         //validate
-        $validate = Validator::make(request()->all(),[
-            'email' => 'required|email'
-        ]);
-        if ($validate->fails())
-        {
-            return ResponderFacade::emailNotValid($validate->errors());
-        }
+        $this->validateEmail();
 
         // find user row in DB or fail
         $user = UserProviderFacade::getUserByEmail($email);
@@ -45,5 +39,15 @@ class TokenSenderController extends Controller
         TokenSenderFacade::send($token,$user);
 
         return ResponderFacade::tokenSent();
+    }
+
+    private function validateEmail(): void
+    {
+        $validate = Validator::make(request()->all(), [
+            'email' => 'required|email'
+        ]);
+        if ($validate->fails()) {
+            ResponderFacade::emailNotValid($validate->errors())->throwResponse();
+        }
     }
 }
