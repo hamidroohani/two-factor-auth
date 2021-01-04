@@ -4,17 +4,7 @@
 namespace TwoFactorAuth\Facades;
 
 
-use Illuminate\Support\Facades\Facade;
-
-class AuthFacade extends Facade
+class AuthFacade extends BaseFacade
 {
-    protected static function getFacadeAccessor()
-    {
-        return 'twoFactorAuth.auth';
-    }
-
-    static function shouldProxyTo($class)
-    {
-        app()->singleton(self::getFacadeAccessor(),$class);
-    }
+    const key = 'twoFactorAuth.auth';
 }
