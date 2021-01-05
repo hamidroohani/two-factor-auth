@@ -34,7 +34,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "hamidroohani\\TwoFactorAuth\\TwoFactorAuthServiceProvider"
+                "TwoFactorAuth\\TwoFactorAuthServiceProvider"
             ]
         }
     }
