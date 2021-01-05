@@ -1,15 +1,15 @@
 <?php
 
 
-namespace TwoFactorAuth\tests;
+namespace HamidRoohani\TwoFactorAuth\tests;
 
 
 use App\Models\User;
 use Illuminate\Http\Response;
 use Tests\TestCase;
-use TwoFactorAuth\Facades\TokenGeneratorFacade;
-use TwoFactorAuth\Facades\TokenStoreFacade;
-use TwoFactorAuth\Facades\UserProviderFacade;
+use HamidRoohani\TwoFactorAuth\Facades\TokenGeneratorFacade;
+use HamidRoohani\TwoFactorAuth\Facades\TokenStoreFacade;
+use HamidRoohani\TwoFactorAuth\Facades\UserProviderFacade;
 
 class TwoFactorAuthTokenTest extends TestCase
 {

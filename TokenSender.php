@@ -3,7 +3,7 @@
 namespace TwoFactorAuth;
 
 use Illuminate\Support\Facades\Notification;
-use TwoFactorAuth\Notifications\LoginTokenNotification;
+use HamidRoohani\TwoFactorAuth\Notifications\LoginTokenNotification;
 
 class TokenSender{
     public function send($token, $user)

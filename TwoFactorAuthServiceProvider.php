@@ -7,17 +7,17 @@ namespace TwoFactorAuth;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
-use TwoFactorAuth\Authenticator\SessionAuth;
-use TwoFactorAuth\Facades\AuthFacade;
-use TwoFactorAuth\Facades\TokenGeneratorFacade;
-use TwoFactorAuth\Facades\TokenStoreFacade;
-use TwoFactorAuth\Facades\UserProviderFacade;
-use TwoFactorAuth\Http\ResponderFacade;
-use TwoFactorAuth\Http\Responses\AndroidResponses;
+use HamidRoohani\TwoFactorAuth\Authenticator\SessionAuth;
+use HamidRoohani\TwoFactorAuth\Facades\AuthFacade;
+use HamidRoohani\TwoFactorAuth\Facades\TokenGeneratorFacade;
+use HamidRoohani\TwoFactorAuth\Facades\TokenStoreFacade;
+use HamidRoohani\TwoFactorAuth\Facades\UserProviderFacade;
+use HamidRoohani\TwoFactorAuth\Http\ResponderFacade;
+use HamidRoohani\TwoFactorAuth\Http\Responses\AndroidResponses;
 
 class TwoFactorAuthServiceProvider extends ServiceProvider
 {
-    private $namespace = "TwoFactorAuth\Http\Controllers";
+    private $namespace = "HamidRoohani\TwoFactorAuth\Http\Controllers";
 
     public function register()
     {

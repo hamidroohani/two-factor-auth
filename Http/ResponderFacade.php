@@ -1,12 +1,12 @@
 <?php
 
 
-namespace TwoFactorAuth\Http;
+namespace HamidRoohani\TwoFactorAuth\Http;
 
 
 use Illuminate\Support\Facades\Facade;
-use TwoFactorAuth\Http\Responses\AndroidResponses;
-use TwoFactorAuth\Http\Responses\VueResponses;
+use HamidRoohani\TwoFactorAuth\Http\Responses\AndroidResponses;
+use HamidRoohani\TwoFactorAuth\Http\Responses\VueResponses;
 
 class ResponderFacade extends Facade
 {

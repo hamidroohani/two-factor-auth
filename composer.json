@@ -28,13 +28,13 @@
     },
     "autoload": {
         "psr-4": {
-            "TwoFactorAuth\\": "two_factor_auth/"
+            "HamidRoohani\\TwoFactorAuth\\": "two_factor_auth/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "TwoFactorAuth\\TwoFactorAuthServiceProvider"
+                "HamidRoohani\\TwoFactorAuth\\TwoFactorAuthServiceProvider"
             ]
         }
     }

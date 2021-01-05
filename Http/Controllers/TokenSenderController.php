@@ -1,16 +1,16 @@
 <?php
 
 
-namespace TwoFactorAuth\Http\Controllers;
+namespace HamidRoohani\TwoFactorAuth\Http\Controllers;
 
 
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
-use TwoFactorAuth\Facades\TokenGeneratorFacade;
-use TwoFactorAuth\Facades\TokenStoreFacade;
-use TwoFactorAuth\Facades\UserProviderFacade;
-use TwoFactorAuth\Http\ResponderFacade;
+use HamidRoohani\TwoFactorAuth\Facades\TokenGeneratorFacade;
+use HamidRoohani\TwoFactorAuth\Facades\TokenStoreFacade;
+use HamidRoohani\TwoFactorAuth\Facades\UserProviderFacade;
+use HamidRoohani\TwoFactorAuth\Http\ResponderFacade;
 
 class TokenSenderController extends Controller
 {

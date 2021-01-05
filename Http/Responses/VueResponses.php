@@ -1,7 +1,7 @@
 <?php
 
 
-namespace TwoFactorAuth\Http\Responses;
+namespace HamidRoohani\TwoFactorAuth\Http\Responses;
 
 
 use Illuminate\Http\Response;

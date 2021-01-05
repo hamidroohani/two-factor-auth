@@ -1,7 +1,7 @@
 <?php
 
 
-namespace TwoFactorAuth\Authenticator;
+namespace HamidRoohani\TwoFactorAuth\Authenticator;
 
 
 use Illuminate\Support\Facades\Auth;

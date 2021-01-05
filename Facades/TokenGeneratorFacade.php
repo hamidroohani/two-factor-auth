@@ -1,7 +1,7 @@
 <?php
 
 
-namespace TwoFactorAuth\Facades;
+namespace HamidRoohani\TwoFactorAuth\Facades;
 
 
 class TokenGeneratorFacade extends BaseFacade
