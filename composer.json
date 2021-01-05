@@ -1,5 +1,5 @@
 {
-    "name": "laravel/hamidroohani/two-factor-auth",
+    "name": "hamidroohani/two-factor-auth",
     "description": "Powerful otp login for the Laravel framework.",
     "keywords": [
         "otp",
