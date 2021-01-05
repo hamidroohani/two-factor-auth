@@ -1,0 +1,40 @@
+{
+    "name": "laravel/hamidroohani/two-factor-auth",
+    "description": "Powerful otp login for the Laravel framework.",
+    "keywords": [
+        "otp",
+        "two-factor-auth",
+        "login",
+        "laravel"
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/hamidroohani/two-factor-auth",
+    "authors": [
+        {
+            "name": "Hamid Roohani",
+            "email": "hamid.roohany@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2.5|^8.0"
+    },
+    "require-dev": {
+        "mockery/mockery": "~1.3.3|^1.4.2",
+        "phpunit/phpunit": "^8.5.8|^9.3.3"
+    },
+    "suggest": {
+        "illuminate/database": "The Illuminate Database package (^6.0|^7.0|^8.0)."
+    },
+    "autoload": {
+        "psr-4": {
+            "TwoFactorAuth\\": "two_factor_auth/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "hamidroohani\\TwoFactorAuth\\TwoFactorAuthServiceProvider"
+            ]
+        }
+    }
+}

@@ -5,6 +5,7 @@ namespace TwoFactorAuth;
 
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
 use TwoFactorAuth\Authenticator\SessionAuth;
 use TwoFactorAuth\Facades\AuthFacade;
@@ -30,6 +31,7 @@ class TwoFactorAuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->defineRoutes();
+        $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
     }
 
     public function defineRoutes(): void
