@@ -1,7 +1,7 @@
 <?php
 
 
-namespace TwoFactorAuth;
+namespace HamidRoohani\TwoFactorAuth;
 
 
 class TokenGenerator

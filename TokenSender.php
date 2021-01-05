@@ -1,6 +1,6 @@
 <?php
 
-namespace TwoFactorAuth;
+namespace HamidRoohani\TwoFactorAuth;
 
 use Illuminate\Support\Facades\Notification;
 use HamidRoohani\TwoFactorAuth\Notifications\LoginTokenNotification;

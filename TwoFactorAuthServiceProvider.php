@@ -1,7 +1,7 @@
 <?php
 
 
-namespace TwoFactorAuth;
+namespace HamidRoohani\TwoFactorAuth;
 
 
 use Illuminate\Support\Facades\Route;
