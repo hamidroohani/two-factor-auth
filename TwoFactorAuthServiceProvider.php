@@ -4,6 +4,7 @@
 namespace HamidRoohani\TwoFactorAuth;
 
 
+use HamidRoohani\TwoFactorAuth\Commands\SampleCommand;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;
@@ -32,6 +33,9 @@ class TwoFactorAuthServiceProvider extends ServiceProvider
     {
         $this->defineRoutes();
         $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
+        $this->commands([
+            SampleCommand::class
+        ]);
     }
 
     public function defineRoutes(): void
